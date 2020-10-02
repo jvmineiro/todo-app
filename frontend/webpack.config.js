@@ -12,19 +12,19 @@ module.exports = {
         contentBase: './public',
     },
     resolve: {
-        extenssions: ['', '.js', 'jsx'],
+        extensions: ['', '.js', '.jsx'],
         alias: {
             modules: __dirname + '/node_modules'
         }
     },
-    plugins: [
+    plugins: [ 
         new ExtractTextPlugin('app.css')
     ],
-    modules: {
+    module: {
         loaders: [{
             test: /.js[x]?$/,
             loader: 'babel-loader',
-            exclude: /node-modules/,
+            exclude: /node_modules/,
             query: {
                 presets: ['es2015', 'react'],
                 plugins: ['transform-object-rest-spread']
